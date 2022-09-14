@@ -264,93 +264,184 @@ For the `.key.black--key::after`, set the `width` to `32px` and the `height` to 
 }
 ```
 > **Step 21** <br>
+The piano needs the freeCodeCamp logo to make it official.<br>
+Add an `img` element before your `.keys` element. Give the `img` a `class` of `logo`, and set the `src` to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`. Give it an `alt` text of `freeCodeCamp Logo`.
 
-
-```css
-#styles.css
-
+```html
+#index.html
+    <div id="piano">
+      <img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo" />
+      <div class="keys">
 ```
 > **Step 22** <br>
-
+Start styling the logo by creating a `.logo` selector. Set the `width` to `200px`, a `position` of `absolute` and a `top` set to `23px`.
 
 ```css
 #styles.css
-
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 23px;
+}
 ```
 > **Step 23** <br>
-
+The `img` element needs its parent to have a `position` set as a point of reference. Set the `position` of the `#piano` selector to `relative`.
 
 ```css
 #styles.css
-
+#piano {
+  background-color: #00471b;
+  width: 992px;
+  height: 290px;
+  margin: 80px auto;
+  padding: 90px 20px 0 20px;
+  position: relative;
+}
 ```
 > **Step 24** <br>
-
+To smooth the sharp edges of the piano and keys, start by giving the `#piano` a `border-radius` of `10px`.
 
 ```css
 #styles.css
-
+#piano {
+  background-color: #00471b;
+  width: 992px;
+  height: 290px;
+  margin: 80px auto;
+  padding: 90px 20px 0 20px;
+  position: relative;
+  border-radius: 10px;
+}
 ```
 > **Step 25** <br>
-
+Give the `.key` selector a `border-radius` value of `0 0 3px 3px`.
 
 ```css
 #styles.css
-
+.key {
+  background-color: #ffffff;
+  position: relative;
+  width: 41px;
+  height: 175px;
+  margin: 2px;
+  float: left;
+  border-radius: 0 0 3px 3px;
+}
 ```
 > **Step 26** <br>
-
+Give the `.key.black--key::after` selector a `border-radius` of `0 0 3px 3px` to match the keys.
 
 ```css
 #styles.css
-
+.key.black--key::after {
+  background-color: #1d1e22;
+  content: "";
+  position: absolute;
+  left: -18px;
+  width: 32px;
+  height: 100px;
+  border-radius: 0 0 3px 3px;
+}
 ```
 > **Step 27** <br>
-
+The `@media` at-rule, also known as a media query, is used to conditionally apply CSS. Media queries are commonly used to apply CSS based on the viewport width using the `max-width` and `min-width` properties.<br>
+In the below example the padding is applied to the `.card` class when the viewport is `960px` wide and below.
+> ```css
+> #styles.css
+> @media (max-width: 960px) {
+>   .card {
+>     padding: 2rem;
+>   }
+> }
+> ```
+> Add a media query that will be applied when the viewport is `768px` wide and below.
 
 ```css
 #styles.css
+@media (max-width: 768px) {
 
+}
 ```
 > **Step 28** <br>
-
+Add a new `#piano` selector within your `@media` query, and set the `width` to `358px`.
 
 ```css
 #styles.css
-
+@media (max-width: 768px) {
+  #piano {
+    width: 358px;
+  }
+}
 ```
 > **Step 29** <br>
-
+Within the `@media` query, add a `.keys` selector and set the `width` to `318px`.
 
 ```css
 #styles.css
+@media (max-width: 768px) {
+  #piano {
+    width: 358px;
+  }
 
+  .keys {
+    width: 318px;
+  }
+}
 ```
 > **Step 30** <br>
-
+Now add a `.logo` selector to the `@media` query, and set the `width` property to `150px`.
 
 ```css
 #styles.css
+@media (max-width: 768px) {
+  #piano {
+    width: 358px;
+  }
 
+  .keys {
+    width: 318px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
 ```
 > **Step 31** <br>
-
+You might have noticed the keys collapse when the browser window is smaller than `768px`. Set `overflow` to `hidden` in the first `.keys` selector, to take care of this issue. This property will hide any element that is pushed outside the set `width` value of `.keys`.
 
 ```css
 #styles.css
-
+.keys {
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  overflow: hidden;
+}
 ```
 > **Step 32** <br>
-
+Add another `@media` rule to apply if the browser window is bigger than `769px` but smaller than `1199px`.
 
 ```css
 #styles.css
+@media (min-width: 769px) and (max-width: 1199px) {
 
+}
 ```
 > **Step 33** <br>
-
+For the new `@media` rule, set the `width` of the `#piano` to `675px` and the `width` of the `.keys` to `633px`.<br><br>
+With that, your piano is complete!
 
 ```css
 #styles.css
+@media (max-width: 1199px) and (min-width: 769px) {
+  #piano {
+    width: 675px;
+  }
 
+  .keys {
+    width: 633px;
+  }
+}
 ```
